@@ -1,0 +1,1 @@
+# Ex:- scope :active, -> {where(:active => true)}

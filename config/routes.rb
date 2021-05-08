@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'posts/index'
+  get 'accounts/index'
+  devise_for :accounts
+  #dashboard
+  get "/dashboard" => "accounts#index"
+  resources :posts, only: [:new, :create, :show]
+  root to: "public#homepage"
+
 end
